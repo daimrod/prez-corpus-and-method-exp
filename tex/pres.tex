@@ -70,15 +70,15 @@
   \frametitle{Contexte}
   \begin{block}{Problématique}
   \begin{itemize}
-    \item citations dans les articles de recherche
-    \item amélioration du travail des chercheurs
+    \item Lier un article aux travaux précédents
+    \item Identifier le contexte d'un article
   \end{itemize}
   \end{block}
 
   \begin{block}{Objectif de l'article}
   \begin{itemize}
-    \item Détection de citation implicite
-    \item ...
+    \item Détecter les citations implicites dans un article
+    \item Générer un résumé d'article
   \end{itemize}
   \end{block}
 \end{frame}
@@ -86,16 +86,17 @@
 \section{Travaux précédents}
 \begin{frame}
   \frametitle{Travaux précédents}
+  \begin{itemize}
+    \item Réseaux de citations et collaborations [2001,2006]
+    \item Importance des citations dans l'identification de contexte [2008...]
+    \item Catégories de citations pour la génération de résumé [2004,2009...]
+  \end{itemize}
 
-  Peu de travaux précédents
-
-  \begin{block}{Pertinence}
-  A\&B ont montré que l'utilisation des citations était importante
+  \begin{block}{Ce qui n'a pas ou peu été fait}
+    \item citations implicites
+    \item ...
   \end{block}
 
-  \begin{block}{Extraction}
-  Peu de travaux sur l'extraction (Kaplan...)
-  \end{block}
 
 \end{frame}
 
@@ -108,8 +109,40 @@
 
 \begin{frame}
   \frametitle{Cadre de travail}
-  \begin{block}{data}
+  \begin{block}{Données}
+    \item 10 articles récents de l'ANN [2003-2008]
+    \item 203 couples article-citation
+    \item ~ 1500 phrases
   \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Vecteurs de contexte}
+  Pour un article donné A, un article donné B,
+  Vect(A,B) tel que pour chaque phrase P de l'article B, P-ième valeur de Vect(A,B) :
+  \begin{itemize}
+    \item = 0 si aucune citation
+    \item = 1 si citation implicite
+    \item = C si citation explicite
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Fiabilité de l'annotation}
+  Un annotateur expert mais exterieur est employé
+  La fiabilité est mesurée par le coefficient kappa (rappel?)
+\end{frame}
+
+\begin{frame}
+  \frametitle{Une première analyse}
+  \begin{itemize}
+    \item Distribution article / nombre de citations
+    \item Positions ces citations implicites / explicites
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Méthode}
 \end{frame}
 
 \section{Experiences et résultats}
