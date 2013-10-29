@@ -86,33 +86,37 @@
 \section{Travaux précédents}
 \begin{frame}
   \frametitle{Travaux précédents}
+  Les sujets déjà abordés
   \begin{itemize}
     \item Réseaux de citations et collaborations [2001,2006]
     \item Importance des citations dans l'identification de contexte [2008...]
     \item Catégories de citations pour la génération de résumé [2004,2009...]
   \end{itemize}
 
-  \begin{block}{Ce qui n'a pas ou peu été fait}
+  Ce qui n'a pas ou peu été fait
+  \begin{itemize}
     \item citations implicites
-    \item ...
-  \end{block}
-
-
+    \item   ...
+  \end{itemize}
+    
 \end{frame}
 
 \section{Méthode proposée}
 \begin{frame}
   \frametitle{Rappel? sur les MRF}
   \begin{block}{bloublou explication des MRF}
+  fdsfsdfsd
   \end{block}
 \end{frame}
 
 \begin{frame}
   \frametitle{Cadre de travail}
   \begin{block}{Données}
+  \begin{itemize}
     \item 10 articles récents de l'ANN [2003-2008]
     \item 203 couples article-citation
-    \item ~ 1500 phrases
+    \item environ 1500 phrases
+  \end{itemize}
   \end{block}
 \end{frame}
 
@@ -121,9 +125,9 @@
   Pour un article donné A, un article donné B,
   Vect(A,B) tel que pour chaque phrase P de l'article B, P-ième valeur de Vect(A,B) :
   \begin{itemize}
-    \item = 0 si aucune citation
-    \item = 1 si citation implicite
-    \item = C si citation explicite
+    \item 0 si aucune citation
+    \item 1 si citation implicite
+    \item C si citation explicite
   \end{itemize}
 \end{frame}
 
@@ -137,26 +141,57 @@
   \frametitle{Une première analyse}
   \begin{itemize}
     \item Distribution article / nombre de citations
-    \item Positions ces citations implicites / explicites
+    \item Positions des citations implicites / explicites
   \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Méthode}
-\end{frame}
-
-\section{Experiences et résultats}
-\begin{frame}
-  \frametitle{Baseline}
-
+  Les étapes
   \begin{itemize}
-    \item tel et tel
-    \item tel et tel
+    \item Modélisation du réseau de phrases par un MRF
+    \item Belief Propagation
+    \item Score et décision
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Comparaisons}
+  \frametitle{Modélisation}
+  Chaque phrase est modélisée par un noeud dans le graphe, qui est affecté de deux scores (contexte et non)
+
+  ...
+\end{frame}
+
+\begin{frame}
+  \frametitle{Belief Propagation}
+  Les scores de chaque noeud du graphe dépendent de ceux des noeuds voisins par message passing
+
+  ...
+\end{frame}
+
+\begin{frame}
+  \frametitle{Score et décision}
+  (equation 1 de l'article)
+  ...
+\end{frame}
+
+\section{Experiences et résultats}
+\begin{frame}
+  \frametitle{Baselines}
+  \begin{block}{Baseline "RI"}
+  %\begin{itemize}
+    Mesure de similarité entre les phrases contenant des citations
+  %\end{itemize}
+  \end{block}
+  \begin{block}{Baseline "MRF"}
+  %\begin{itemize}
+    Cherche des motifs de discours dans le voisinnage des citations 
+  %\end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Résultats}
   tableau de résultats
 \end{frame}
 
