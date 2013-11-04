@@ -18,7 +18,7 @@
 
 
 \title{Détection de citations implicites}
-\subtitle{tralala}
+\subtitle{Article de V. Qazvinian \& D. Radev (ACL 2010)}
 \author{Grégoire Jadi \& Joseph Lark}
 %\date{September 6th 2006}
 
@@ -86,28 +86,16 @@
 \section{Travaux précédents}
 \begin{frame}
   \frametitle{Travaux précédents}
-  Les sujets déjà abordés
   \begin{itemize}
     \item Réseaux de citations et collaborations [2001,2006]
-    \item Importance des citations dans l'identification de contexte [2008...]
-    \item Catégories de citations pour la génération de résumé [2004,2009...]
-  \end{itemize}
-
-  Ce qui n'a pas ou peu été fait
-  \begin{itemize}
-    \item citations implicites
-    \item   ...
+    \item Importance des citations dans l'identification de contexte [2008]
+    \item Catégories de citations pour la génération de résumé [2004,2009]
   \end{itemize}
     
 \end{frame}
 
 \section{Méthode proposée}
-\begin{frame}
-  \frametitle{Rappel? sur les MRF}
-  \begin{block}{bloublou explication des MRF}
-  fdsfsdfsd
-  \end{block}
-\end{frame}
+
 
 \begin{frame}
   \frametitle{Cadre de travail}
@@ -156,10 +144,34 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Modélisation}
-  Chaque phrase est modélisée par un noeud dans le graphe, qui est affecté de deux scores (contexte et non)
+  \frametitle{Markov Random Fields}
+  \begin{block}{But}
+  \begin{itemize}
+   \item Inférence
+   \item Classification
+  \end{itemize}
+  \end{block}
+  
+  \begin{block}{Structure}
+  \begin{itemize}
+   \item Graphe non orienté
+   \item Noeuds observés et noeuds cachés
+  \end{itemize}
+  \end{block}
+  
+  \begin{block}{Fonctionnement}
+  L'état de chaque noeud caché dépend de la valeur du noeud observé correspondant,
+  et de l'état des noeuds cachés voisins.
+  \end{block}
+\end{frame}
 
-  ...
+\begin{frame}
+  \frametitle{Modélisation}
+  \begin{itemize}
+   \item Chaque phrase est modélisée par un noeud dans le graphe, qui est affecté de deux scores (contexte et non)
+   \item Le nombre de dépendances est variable (c'est un paramètre testé).
+   \item On note BPi le MRF où chaque noeud est lié à 2i voisins (i phrases précédentes, i phrases suivantes)
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
