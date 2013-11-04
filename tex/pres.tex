@@ -121,14 +121,16 @@
 
 \begin{frame}
   \frametitle{Fiabilité de l'annotation}
-  Un annotateur expert mais exterieur est employé
-  La fiabilité est mesurée par le coefficient kappa (rappel?)
+  \begin{itemize}
+    \item Un annotateur expert mais exterieur est employé
+    \item La fiabilité est mesurée par le coefficient kappa
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Une première analyse}
   \begin{itemize}
-    \item Distribution article / nombre de citations
+    \item Distribution des citations par article
     \item Positions des citations implicites / explicites
   \end{itemize}
 \end{frame}
@@ -138,13 +140,13 @@
   Les étapes
   \begin{itemize}
     \item Modélisation du réseau de phrases par un MRF
-    \item Belief Propagation
-    \item Score et décision
+    \item Algorithme \textit{Belief Propagation}
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Markov Random Fields}
+  \frametitle{Mais tout d'abord...}
+  \textit{Markov Random Fields}
   \begin{block}{But}
   \begin{itemize}
    \item Inférence
@@ -175,16 +177,12 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Belief Propagation}
-  Les scores de chaque noeud du graphe dépendent de ceux des noeuds voisins par message passing
-
-  ...
-\end{frame}
-
-\begin{frame}
-  \frametitle{Score et décision}
-  (equation 1 de l'article)
-  ...
+  \frametitle{Algorithme \textit{Belief Propagation}}
+  \begin{itemize}
+   \item Les scores de chaque noeud dépendent de ceux des noeuds voisins par \textit{message passing}
+   \item Il y a convergence si les messages ne changent pas d'un certain seuil entre deux itérations
+   \item En théorie la convergence n'est pas assurée pour les graphes mais en pratique BP converge toujours
+  \end{itemize}
 \end{frame}
 
 \section{Experiences et résultats}
@@ -204,7 +202,15 @@
 
 \begin{frame}
   \frametitle{Résultats}
-  tableau de résultats
+  Résumé des résultats (F-mesure par article)
+  \begin{itemize}
+   \item Les scores sont très hétérogènes
+   \item Le MRF version BP4 présente les meilleurs résultats
+   \item Amélioration notable par rapport aux baselines
+   \item Toutes méthodes confondues, moyenne à 0.3, max à 0.8
+  \end{itemize}
+
+
 \end{frame}
 
 \section{Conclusion}
@@ -212,9 +218,21 @@
   \frametitle{Conclusion}
 
   \begin{itemize}
-    \item amélioration de ...
-    \item travaux à venir
+    \item Amélioration nette de la détection de citations implicites
+    \item Apport d'information sur le contexte pour la génération de résumés
   \end{itemize}
+\end{frame}
+
+\section{Remarques}
+\begin{frame}
+  \frametitle{Remarques}
+
+  \begin{itemize}
+    \item Corpus choisi ?
+    \item Baselines choisies ?
+  \end{itemize}
+  
+  Vos remarques ou questions ?
 \end{frame}
 
 \end{document}
