@@ -8,6 +8,7 @@
 \usepackage[french]{babel}
 \usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
 \usepackage{verbatim}
+\usepackage{graphicx}
 
 \pdfinfo
 {
@@ -64,38 +65,35 @@
 
 
 
-\section{Contexte}
+\section{Un peu de contexte}
 
 \begin{frame}
-  \frametitle{Contexte}
-  \begin{block}{Problématique}
+  \frametitle{Le contexte}
+  \begin{block}{Quel est le problème ?}
   \begin{itemize}
-    \item Lier un article aux travaux précédents
-    \item Identifier le contexte d'un article
+    \item Comment améliorer la génération de résumé automatique
   \end{itemize}
   \end{block}
-
-  \begin{block}{Objectif de l'article}
+  \pause
+  \begin{block}{Quelle est l'approche retenue ?}
   \begin{itemize}
-    \item Détecter les citations implicites dans un article
-    \item Générer un résumé d'article
+    \item Utiliser les citations
+    \pause
+    \item Détecter les citations implicites
   \end{itemize}
   \end{block}
-\end{frame}
-
-\section{Travaux précédents}
-\begin{frame}
-  \frametitle{Travaux précédents}
+  \pause
+  \begin{block}{Pourquoi ?}
   \begin{itemize}
     \item Réseaux de citations et collaborations [2001,2006]
     \item Importance des citations dans l'identification de contexte [2008]
     \item Catégories de citations pour la génération de résumé [2004,2009]
   \end{itemize}
-    
+  \end{block}
+
 \end{frame}
 
 \section{Méthode proposée}
-
 
 \begin{frame}
   \frametitle{Cadre de travail}
@@ -113,9 +111,9 @@
   Pour un article donné A, un article donné B,
   Vect(A,B) tel que pour chaque phrase P de l'article B, P-ième valeur de Vect(A,B) :
   \begin{itemize}
+    \item C si citation explicite (e.g. « Lin and Pantel (2001) acquire ... »)
+    \item 1 si citation implicite (e.g. « This approach is ... »)
     \item 0 si aucune citation
-    \item 1 si citation implicite
-    \item C si citation explicite
   \end{itemize}
 \end{frame}
 
@@ -165,6 +163,20 @@
   L'état de chaque noeud caché dépend de la valeur du noeud observé correspondant,
   et de l'état des noeuds cachés voisins.
   \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{\textit{Markov Random Fields}}
+  
+  $b_i$($x_i$) $\leftarrow$ $k$ $\phi_i$($x_i$) $\prod_{\substack{j \in ne(i)}}$ $m_{ji}$($x_i$)
+  \linebreak
+  
+  $m_{ij}$($x_i$) $\leftarrow$ $\sum_{\substack{x_i}}$ $\phi_i$($x_i$) $\psi_{ij}$ ($x_i$ , $x_j$) $\prod_{\substack{k \in ne(i) \\ j}}$ $m_{ki}$($x_i$)
+  
+  \begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.2]{schemaMRF.png}
+  \end{figure}
 \end{frame}
 
 \begin{frame}
@@ -229,6 +241,7 @@
 
   \begin{itemize}
     \item Corpus choisi ?
+    \item Apprentissage ? (SVM...)
     \item Baselines choisies ?
   \end{itemize}
   
@@ -236,4 +249,3 @@
 \end{frame}
 
 \end{document}
-
