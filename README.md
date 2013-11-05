@@ -27,3 +27,10 @@ Pres / Citations
 
 
 # Notes
+
+## Compatibility Function
+
+p6 Ils définissent la fonction de compatibilité d'être, dans le cas ou
+le nom courant est dans un contexte de citation, comme étant une
+sigmoid d'une similarité cosinus (ils parlent de similarité lexical
+mutuelle), or cette mesure n'est définie nulle part.
